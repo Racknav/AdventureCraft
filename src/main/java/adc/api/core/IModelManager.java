@@ -1,0 +1,26 @@
+package adc.api.core;
+
+import net.minecraft.client.renderer.ItemMeshDefinition;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+@SideOnly(Side.CLIENT)
+public interface IModelManager {
+	
+	void registerItemModel(Item item, int meta, String modifier, String identifier);
+	
+	void registerItemModel(Item item, int meta, String identifier);
+	
+	void registerItemModel(Item item, int meta);
+	
+	ModelResourceLocation getModelLocation(Item item);
+	
+	ModelResourceLocation getModelLocation(String identifier);
+	
+	ModelResourceLocation getModelLocation(String modID, String identifier);
+	
+	void registerItemModel(Item item, ItemMeshDefinition definition);
+	
+}

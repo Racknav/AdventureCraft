@@ -1,8 +1,7 @@
-package com.adc.engine.proxy;
+package adc.core.proxy;
 
-import com.adc.AdventureCraft;
-import com.adc.api.IManager;
-
+import adc.AdventureCraft;
+import adc.api.core.IInitManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -15,7 +14,7 @@ public class ProxyClient extends ProxyCommon {
 	@Override
 	public void preInit(FMLPreInitializationEvent e) {
 		super.preInit(e);
-		for (IManager manager : AdventureCraft.instance.Managers) {
+		for (IInitManager manager : AdventureCraft.instance.Managers) {
 			manager.preInitClient();
 		}
 		
@@ -24,7 +23,7 @@ public class ProxyClient extends ProxyCommon {
 	@Override
 	public void init(FMLInitializationEvent e) {
 		super.init(e);
-		for (IManager manager : AdventureCraft.instance.Managers) {
+		for (IInitManager manager : AdventureCraft.instance.Managers) {
 			manager.initClient();
 		}
 	}
@@ -32,7 +31,7 @@ public class ProxyClient extends ProxyCommon {
 	@Override
 	public void postInit(FMLPostInitializationEvent e) {
 		super.postInit(e);
-		for (IManager manager : AdventureCraft.instance.Managers) {
+		for (IInitManager manager : AdventureCraft.instance.Managers) {
 			manager.postInitClient();
 		}
 	}

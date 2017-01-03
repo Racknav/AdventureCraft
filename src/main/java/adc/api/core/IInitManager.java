@@ -1,6 +1,6 @@
-package com.adc.api;
+package adc.api.core;
 
-public interface IManager {
+public interface IInitManager {
 
 	void preInitCommon();
 
