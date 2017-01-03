@@ -1,0 +1,7 @@
+//// Items \\\\
+item.adc.test_item.name=Debug Item
+item.adc.gold_piece.name=GP
+item.adc.gold_purse.name=Gold Purse
+
+//// Creative Tabs \\\\
+itemGroup.adc=Adventure Craft

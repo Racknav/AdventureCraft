@@ -1,0 +1,16 @@
+[
+{
+  "modid": "adc",
+  "name": "Adventure Craft",
+  "description": "Example placeholder mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Racknav"],
+  "credits": "The Elder Council",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
