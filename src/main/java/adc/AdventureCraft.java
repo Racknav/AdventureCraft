@@ -5,11 +5,13 @@ import java.util.List;
 
 import adc.api.core.AdventureCraftAPI;
 import adc.api.core.IInitManager;
+import adc.core.adventurer.capabilities.AdventurerCapabilityHandler;
 import adc.core.config.Constants;
 import adc.core.items.ItemsManager;
 import adc.core.proxy.Proxies;
 import adc.core.proxy.ProxyCommon;
 import adc.core.utils.Log;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -47,6 +49,8 @@ public class AdventureCraft {
 		Log.info("Blocks And Dragons: Init Phase");
 		Proxies.common.init(e);
 		Proxies.render.registerRenders(e);
+
+		MinecraftForge.EVENT_BUS.register(new AdventurerCapabilityHandler());
 	}
 	
 	@EventHandler
