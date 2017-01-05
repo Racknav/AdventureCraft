@@ -10,4 +10,7 @@ public interface IStats {
 	public int getStatPoints();
 	public void lowerStatPoints();
 	public void raiseStatPoints();
+	
+	public void setFirstSet(boolean value);
+	public boolean isFirstSet();
 }

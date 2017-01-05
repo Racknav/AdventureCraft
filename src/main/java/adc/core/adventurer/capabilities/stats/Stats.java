@@ -13,7 +13,16 @@ public class Stats implements IStats{
 	};
 	
 	private int adventureExp, adventureLevel, statPoints;
+	private boolean firstSet;
 
+	public Stats() {
+		adventureExp = 0;
+		adventureLevel = 1;
+		statPoints = statPointBoosts[0];
+		firstSet = true;
+	}
+	
+	
 	@Override
 	public int getExp() {
 		return adventureExp;
@@ -56,5 +65,16 @@ public class Stats implements IStats{
 	public void raiseStatPoints() {
 		statPoints++;
 	}
+
+	@Override
+	public void setFirstSet(boolean value) {
+		firstSet = value;
+	}
+	@Override
+	public boolean isFirstSet() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
 	
 }

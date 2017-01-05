@@ -2,6 +2,10 @@ package adc.core.adventurer.input;
 
 import org.lwjgl.input.Keyboard;
 
+import adc.AdventureCraft;
+import adc.core.adventurer.AdventurerCore;
+import adc.core.adventurer.gui.GuiAttributesInterface;
+import adc.core.network.GuiHandlerADC;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.common.MinecraftForge;
@@ -32,8 +36,8 @@ public static KeyBinding StatsInterface;
 			Minecraft mc = Minecraft.getMinecraft();
 			if (StatsInterface.isKeyDown())
 			{
-				//if (!(mc.currentScreen instanceof GuiStatInterface))
-				//	event.player.openGui(BlocksAndDragons.instance, ModGuiHandler.STAT_GUI, mc.theWorld, (int) event.player.posX, (int) event.player.posY, (int) event.player.posZ);
+				if (!(mc.currentScreen instanceof GuiAttributesInterface))
+					event.player.openGui(AdventureCraft.instance, GuiHandlerADC.ATTRIBUTES_GUI, mc.theWorld, (int) event.player.posX, (int) event.player.posY, (int) event.player.posZ);
 			}
 		}
 	}

@@ -9,6 +9,7 @@ import adc.core.adventurer.AdventurerCore;
 import adc.core.adventurer.capabilities.AdventurerCapabilityHandler;
 import adc.core.config.Constants;
 import adc.core.items.ItemsManager;
+import adc.core.network.GuiHandlerADC;
 import adc.core.proxy.Proxies;
 import adc.core.proxy.ProxyCommon;
 import adc.core.utils.Log;
@@ -20,6 +21,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 @Mod(
 		modid = Constants.MOD_ID,
@@ -42,6 +44,7 @@ public class AdventureCraft {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
 		Log.info("Blocks And Dragons: PreInit Phase");
+		NetworkRegistry.INSTANCE.registerGuiHandler(this.instance, new GuiHandlerADC());
 		initManagers();
 		Proxies.common.preInit(e);
 	}

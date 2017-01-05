@@ -31,7 +31,7 @@ public class AdventurerCore {
 				if(player.hasCapability(AttributesProvider.ATTRIBUTES_CAP, null)){
 					IAttributes cap = player.getCapability(AttributesProvider.ATTRIBUTES_CAP, null);
 					if(event.getSource().damageType == "player") {
-						Log.debug("Player delt " + event.getAmount() + " damage with a Str of " 
+						Log.info("Player delt " + event.getAmount() + " damage with a Str of " 
 								+ cap.getCurrentAttributeBonus(EAttributes.STRENGTH) + ", upping damge to " + (event.getAmount() + cap.getCurrentAttributeBonus(EAttributes.STRENGTH)));
 						event.setAmount(event.getAmount() + cap.getCurrentAttributeBonus(EAttributes.STRENGTH)); // Adds strength bonus to Melee
 					}
