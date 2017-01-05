@@ -46,4 +46,9 @@ public class Attributes implements IAttributes {
 		setCurrentAttribute(attribute, getBaseAttribute(attribute));
 	}
 
+	@Override
+	public int getCurrentAttributeBonus(EAttributes attribute) {
+		return ((getCurrentAttribute(attribute) - 10) / 2);
+	}
+
 }

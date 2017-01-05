@@ -5,6 +5,7 @@ import java.util.List;
 
 import adc.api.core.AdventureCraftAPI;
 import adc.api.core.IInitManager;
+import adc.core.adventurer.AdventurerCore;
 import adc.core.adventurer.capabilities.AdventurerCapabilityHandler;
 import adc.core.config.Constants;
 import adc.core.items.ItemsManager;
@@ -30,6 +31,7 @@ public class AdventureCraft {
 	
 	@Mod.Instance(Constants.MOD_ID)
 	public static AdventureCraft instance;
+	public static AdventurerCore Adventurer;
 	
 	public AdventureCraft() {
 		AdventureCraftAPI.instance = this;
@@ -50,7 +52,7 @@ public class AdventureCraft {
 		Proxies.common.init(e);
 		Proxies.render.registerRenders(e);
 
-		MinecraftForge.EVENT_BUS.register(new AdventurerCapabilityHandler());
+		Adventurer = new AdventurerCore();
 	}
 	
 	@EventHandler

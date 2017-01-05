@@ -9,4 +9,6 @@ public interface IAttributes {
 	public void setCurrentAttribute(EAttributes attribute, int value);
 	
 	public void resetCurrentAttribute(EAttributes attribute);
+	
+	public int getCurrentAttributeBonus(EAttributes attribute);
 }
